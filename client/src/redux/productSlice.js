@@ -5,7 +5,9 @@ export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/products");
+      const res = await axios.get(
+  "https://mern-ecommerce-app-g5mh.onrender.com/api/products"
+);
       return res.data;
     } catch (err) {
       console.log("API ERROR:", err.message);
