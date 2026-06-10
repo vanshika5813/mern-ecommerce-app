@@ -20,7 +20,11 @@ function OrdersPage() {
     fetchOrders();
   }, []);
 
-  return (
+ useEffect(() => {
+  fetchOrders();
+}, []);
+
+return (
   <div className="container">
     <h1 className="page-title">Order History</h1>
 
@@ -30,35 +34,6 @@ function OrdersPage() {
       orders.map((order) => (
         <div key={order._id} className="order-card">
           <h3>Order ID</h3>
-
-          <p>{order._id}</p>
-
-          <p>
-            <strong>Total Amount:</strong> ₹{order.totalAmount}
-          </p>
-
-          <h4>Items:</h4>
-
-          {order.items.map((item, index) => (
-            <div key={index}>
-              {item.name} × {item.quantity}
-            </div>
-          ))}
-        </div>
-      ))
-    )}
-  </div>
-);return (
-  <div className="container">
-    <h1 className="page-title">Order History</h1>
-
-    {orders.length === 0 ? (
-      <p>No Orders Found</p>
-    ) : (
-      orders.map((order) => (
-        <div key={order._id} className="order-card">
-          <h3>Order ID</h3>
-
           <p>{order._id}</p>
 
           <p>

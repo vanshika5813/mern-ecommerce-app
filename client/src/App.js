@@ -138,15 +138,14 @@ function App() {
 }; 
   const dispatch = useDispatch(); 
 
-  const [search, setSearch] = React.useState("");
-
+  
   // PRODUCTS STATE
-  const products = useSelector((state) => state.products.items);
+  
 
   // CART STATE
   const cart = useSelector((state) => state.cart.items);
 
-  const [category, setCategory] = React.useState("All");
+  
 
   console.log("CART STATE:", cart);
 
