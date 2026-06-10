@@ -11,7 +11,7 @@ function RegisterPage() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/users/register",
+        "https://mern-ecommerce-app-g5mh.onrender.com/api/users/register",
         {
           name,
           email,
