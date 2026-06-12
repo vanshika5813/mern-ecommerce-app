@@ -81,11 +81,7 @@ function CartPage() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.items);
 
-  const totalPrice = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
-
+  
   return (
      <div className="container">
       <h1 className="page-title">Shopping Cart</h1>
@@ -137,21 +133,6 @@ function App() {
   window.location.reload();
 }; 
   const dispatch = useDispatch(); 
-
-  
-  // PRODUCTS STATE
-  
-
-  // CART STATE
-  const cart = useSelector((state) => state.cart.items);
-
-  
-
-  console.log("CART STATE:", cart);
-
-const totalPrice = cart.reduce((sum, item) => {
-  return sum + item.price * item.quantity;
-}, 0);
 
   // FETCH PRODUCTS ON LOAD
   useEffect(() => {
