@@ -80,6 +80,10 @@ function CartPage() {
   
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.items);
+  const totalPrice = cart.reduce(
+  (total, item) => total + item.price * item.quantity,
+  0
+);
 
   
   return (
